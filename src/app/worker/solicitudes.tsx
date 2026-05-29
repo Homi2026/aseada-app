@@ -18,7 +18,7 @@ export default function WorkerSolicitudes() {
   const cargarSolicitudes = async () => {
     try {
       const { token } = await obtenerSesion();
-      const data = await api.get('/servicios/disponibles', token);
+      const data = await api.get('/api/servicios', token);
       if (Array.isArray(data)) setSolicitudes(data);
     } catch (e) { console.log(e); }
     finally { setLoading(false); }
@@ -27,7 +27,7 @@ export default function WorkerSolicitudes() {
   const aceptar = async (servicioId) => {
     try {
       const { token } = await obtenerSesion();
-      await api.post('/servicios/aceptar', { servicioId }, token);
+      await api.post('/api/servicios/aceptar', { servicioId }, token);
       router.push('/worker/trabajo-activo?servicioId=' + servicioId);
     } catch (e) { console.log(e); }
   };

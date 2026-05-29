@@ -15,7 +15,7 @@ export default function Pago() {
     setError('');
     try {
       const { token } = await obtenerSesion();
-      const data = await api.post('/pagos/crear', { servicioId }, token);
+      const data = await api.post('/api/pagos/crear', { servicioId }, token);
       if (data.url) {
         await Linking.openURL(data.url);
       } else {

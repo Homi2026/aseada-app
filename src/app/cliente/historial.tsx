@@ -16,7 +16,7 @@ export default function Historial() {
   const cargarHistorial = async () => {
     try {
       const { token } = await obtenerSesion();
-      const data = await api.get('/servicios/historial', token);
+      const data = await api.get('/api/mis-servicios', token);
       if (Array.isArray(data)) setServicios(data);
     } catch (e) { console.log(e); }
     finally { setLoading(false); }
