@@ -1,11 +1,15 @@
 {
   "expo": {
-    "name": "aseada-app-nuevo",
-    "slug": "aseada-app-nuevo",
+    "name": "Aseada",
+    "slug": "aseada-app",
+    "scheme": "aseada",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "experiments": {
+      "typedRoutes": true
+    },
     "ios": {
       "supportsTablet": true
     },
@@ -20,6 +24,10 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar"
+    ]
   }
 }
